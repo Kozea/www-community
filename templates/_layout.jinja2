@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+{% set PAGES = (
+  ('index', 'Kozea Community'),
+  ('about', 'About'),
+) %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Kozea Community - Fun Free Software Designed for Real Life" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <title>{{ dict(PAGES).get(page, page) }} - Kozea Community</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.sass.css') }}" />
+  </head>
+
+  <body id="page-{{ page }}">
+    <nav>
+      <ul>
+        {% for id, name in PAGES %}
+          <li {{ 'class="active"' if page == id }}><a href="{{ url_for('page', page=id) }}">{{ name }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <main>
+      <h1>{{ dict(PAGES).get(page, page) }}</h1>
+      {% block content %}{% endblock content %}
+    </main>
+
+    <footer>
+      <ul>
+        <li class="github"><a href="https://github.com/Kozea">GitHub</a></li>
+        <li class="mail"><a href="mailto:community@kozea.fr">community@kozea.fr</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

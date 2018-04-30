@@ -1,0 +1,6 @@
+{% extends "_layout.jinja2" %}
+
+{% block content %}
+  <p>La page n'a pas été trouvée.</p>
+  <a href="{{ url_for('page', page='index') }}">Revenir à l'accueil</a>
+{% endblock content %}
