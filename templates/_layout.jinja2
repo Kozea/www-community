@@ -2,15 +2,16 @@
 
 {% set PAGES = (
   ('index', 'Kozea Community'),
+  ('get_involved', 'Get involved'),
   ('about', 'About'),
 ) %}
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Kozea Community - Fun Free Software Designed for Real Life" />
+    <meta name="description" content="Kozea Community - We build open source software that you would love" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-    <title>{{ dict(PAGES).get(page, page) }} - Kozea Community</title>
+    <title>Kozea Community - {{ dict(PAGES).get(page, page) }}</title>
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.sass.css') }}" />
   </head>
 
@@ -20,6 +21,8 @@
         {% for id, name in PAGES %}
           <li {{ 'class="active"' if page == id }}><a href="{{ url_for('page', page=id) }}">{{ name }}</a></li>
         {% endfor %}
+        <li><a href="https://kozeagroup.wordpress.com/category/community/">Blog</a></li>
+        <li><a href="https://www.patreon.com/kozea">Donate</a></li>
       </ul>
     </nav>
 
@@ -31,7 +34,8 @@
     <footer>
       <ul>
         <li class="github"><a href="https://github.com/Kozea">GitHub</a></li>
-        <li class="mail"><a href="mailto:community@kozea.fr">community@kozea.fr</a></li>
+        <li class="about"><a href="{{ url_for('page', page='about', _anchor='contact') }}">Contact</a></li>
+        <li class="kozea"><a href="https://kozea.fr/">Made with ♥ by Kozea</a></li>
       </ul>
     </footer>
   </body>

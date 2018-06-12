@@ -1,0 +1,53 @@
+{% extends "_layout.jinja2" %}
+
+{% block content %}
+  <section>
+    <h2>Use our Projects</h2>
+    <p>
+      You are a developer, a web designer or just a curious person interested
+      in trying our software? <a href="https://github.com/Kozea">Go on
+      GitHub</a> and find out more information about our projects!
+    </p>
+  </section>
+
+  <section>
+    <h2>Report bugs</h2>
+    <p>
+      We are trying our best to provide stable and reliable versions of our
+      projects. If you find a problem in the latest version,
+      please <a href="https://github.com/Kozea">open a new issue on GitHub</a>
+      … if nobody already did!
+    </p>
+  </section>
+
+  <section>
+    <h2>Improve Code &amp; Documentation</h2>
+    <p>
+      Our projects are free and open source software, meaning that you can
+      improve it for yourself and for the others. Get the source! And even if
+      you have no programming skills, you can help us improving the
+      documentation.
+    </p>
+  </section>
+
+  <section>
+    <h2>Donate</h2>
+    <p>
+      If you want to see our software grow and become even
+      better, <a href="https://www.patreon.com/kozea">support us by providing
+      a financial help</a>. Let us drive the development of the features and
+      improvements that matter to you!
+    </p>
+  </section>
+
+  <section>
+    <h2>Tell Us About You</h2>
+    <p>
+      Meeting our wonderful users is the best way to discover the real needs of
+      companies, developers and final customers. Happy? Unhappy?
+      Please <a href="{{ url_for('page', page='about', _anchor='contact') }}">let us
+      know how we could provide you a better experience</a>, or how useful
+      WeasyPrint is in your daily life.
+    </p>
+  </section>
+{% endblock content %}

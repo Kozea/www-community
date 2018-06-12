@@ -1,0 +1,22 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+
+Flask = "*"
+libsass = "*"
+
+[dev-packages]
+
+pytest = "*"
+pytest-isort = "*"
+pytest-flake8 = "*"
+pytest-cov = "*"
+devcore = "*"
+
+[requires]
+
+python_version = "3.6"

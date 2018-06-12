@@ -1,41 +1,9 @@
-include Makefile.config
--include Makefile.custom.config
+include MakeCitron.Makefile
 
-all: install serve
+lint-pytho%:
+	$(LOG)
+	pytest --flake8 --isort -m "flake8 or isort" community.py
 
-install:
-	test -d $(VENV) || virtualenv $(VENV)
-	$(PIP) install --upgrade --no-cache pip setuptools -e .[test]
-
-install-dev:
-	$(PIP) install --upgrade devcore
-
-clean:
-	rm -fr dist
-
-clean-install: clean
-	rm -fr $(VENV)
-	rm -fr *.egg-info
-
-lint:
-	$(PYTEST) --no-cov --flake8 -m flake8
-	$(PYTEST) --no-cov --isort -m isort
-
-check-python: lint
-
-check-outdated:
-	$(PIP) list --outdated --format=columns
-
-check: check-python check-outdated
-
-build:
-
-pre-commit:
-
-env:
-	$(RUN)
-
-run:
-	$(VENV)/bin/$(PROJECT_NAME).py
-
-serve: run
+check-pytho%:
+	$(LOG)
+	# FLASK_CONFIG=$(FLASK_TEST_CONFIG) pytest community.py $(PYTEST_ARGS)
