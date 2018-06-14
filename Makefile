@@ -1,27 +1,10 @@
-include config.Makefile
--include config.custom.Makefile
+include MakeCitron.Makefile
 
-BASEVERSION ?= v1
-BASEROOT ?= https://raw.githubusercontent.com/Kozea/MakeCitron/$(BASEVERSION)/
-BASENAME := base.Makefile
-ifeq ($(MAKELEVEL), 0)
-RV := $(shell wget -q -O $(BASENAME) $(BASEROOT)$(BASENAME) || echo 'FAIL')
-ifeq (,$(RV))
-include $(BASENAME)
-else
-$(error Unable to download $(BASEROOT)$(BASENAME))
-endif
-$(info $(INFO))
-else
-include $(BASENAME)
-endif
-
-
-lint-pytho%:
+lint-python:
 	$(LOG)
 	pytest --flake8 --isort -m "flake8 or isort" community.py
 
-check-pytho%:
+check-python:
 	$(LOG)
 	# FLASK_CONFIG=$(FLASK_TEST_CONFIG) pytest community.py $(PYTEST_ARGS)
 
