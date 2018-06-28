@@ -1,6 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400");
+@import url("https://fonts.googleapis.com/css?family=Hind:300,700");
 html {
-  background: #F9F9F9;
   color: #1C1C1C;
   height: 100%;
   line-height: 1.6; }
@@ -8,7 +7,7 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  font-family: Open Sans;
+  font-family: Hind, sans-serif;
   margin: 0;
   min-height: 100%; }
   body main, body nav ul, body footer ul {
@@ -17,25 +16,17 @@ body {
     margin-right: auto;
     max-width: 50em; }
 
-nav, footer {
-  background: #6E6186;
-  color: white; }
-  nav ul, footer ul {
-    display: flex;
-    padding: 0; }
-    nav ul li, footer ul li {
-      display: block; }
-      nav ul li a, footer ul li a {
-        color: inherit;
-        padding: 1em;
-        text-decoration: inherit; }
-      nav ul li.active a, nav ul li:hover a, footer ul li.active a, footer ul li:hover a {
-        background: rgba(0, 0, 0, 0.1); }
-      nav ul li:last-child, footer ul li:last-child {
-        margin-left: auto; }
-
-nav li:last-child a {
-  background: rgba(255, 255, 255, 0.1); }
+nav ul, footer ul {
+  display: flex;
+  padding: 0; }
+  nav ul li, footer ul li {
+    display: block; }
+    nav ul li a, footer ul li a {
+      color: inherit;
+      padding: 1em;
+      text-decoration: inherit; }
+    nav ul li:last-child, footer ul li:last-child {
+      margin-left: auto; }
 
 main {
   flex: 1;
@@ -43,7 +34,24 @@ main {
   main a {
     color: #6E6186; }
   main h1, main h2 {
-    margin: 1.5em 0 0.5em;
-    font-weight: 300; }
+    font-weight: 300;
+    margin: 1.5em 0 0.5em; }
+
+#page-index h1 {
+  background: #eee;
+  max-width: 50%; }
+
+#page-index section {
+  align-items: flex-start;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap; }
+  #page-index section > * {
+    max-width: 50%; }
+  #page-index section h2 {
+    background: #eee;
+    height: 350px; }
+  #page-index section ol {
+    background: #eee; }
 
 /*# sourceMappingURL=../css/style.sass.css.map */
