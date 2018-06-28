@@ -1,41 +1,23 @@
-include Makefile.config
--include Makefile.custom.config
+include MakeCitron.Makefile
 
-all: install serve
+lint-python:
+	$(LOG)
+	pytest --flake8 --isort -m "flake8 or isort" community.py
 
-install:
-	test -d $(VENV) || virtualenv $(VENV)
-	$(PIP) install --upgrade --no-cache pip setuptools -e .[test]
+check-python:
+	$(LOG)
+	# FLASK_CONFIG=$(FLASK_TEST_CONFIG) pytest community.py $(PYTEST_ARGS)
 
-install-dev:
-	$(PIP) install --upgrade devcore
+deploy-test:
+	$(LOG)
+	@echo "Communicating with Junkrat..."
+	@wget --no-verbose --content-on-error -O- --header="Content-Type:application/json" --post-data=$(subst $(newline),,$(JUNKRAT_PARAMETERS)) $(JUNKRAT) | tee $(JUNKRAT_RESPONSE)
+	if [[ $$(tail -n1 $(JUNKRAT_RESPONSE)) != "Success" ]]; then exit 9; fi
+	wget --no-verbose --content-on-error -O- $(URL_TEST)
 
-clean:
-	rm -fr dist
-
-clean-install: clean
-	rm -fr $(VENV)
-	rm -fr *.egg-info
-
-lint:
-	$(PYTEST) --no-cov --flake8 -m flake8
-	$(PYTEST) --no-cov --isort -m isort
-
-check-python: lint
-
-check-outdated:
-	$(PIP) list --outdated --format=columns
-
-check: check-python check-outdated
-
-build:
-
-pre-commit:
-
-env:
-	$(RUN)
-
-run:
-	$(VENV)/bin/$(PROJECT_NAME).py
-
-serve: run
+deploy-prod:
+	$(LOG)
+	@echo "Communicating with Junkrat..."
+	@wget --no-verbose --content-on-error -O- --header="Content-Type:application/json" --post-data=$(subst $(newline),,$(JUNKRAT_PARAMETERS)) $(JUNKRAT) | tee $(JUNKRAT_RESPONSE)
+	if [[ $$(tail -n1 $(JUNKRAT_RESPONSE)) != "Success" ]]; then exit 9; fi
+	wget --no-verbose --content-on-error -O- $(URL_PROD)
