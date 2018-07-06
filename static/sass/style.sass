@@ -16,8 +16,7 @@ body
 
   main, nav ul, footer ul
     box-sizing: border-box
-    margin-left: auto
-    margin-right: auto
+    margin: 0 auto
     max-width: 50em
 
 nav, footer
@@ -30,11 +29,28 @@ nav, footer
 
       a
         color: inherit
-        padding: 1em
         text-decoration: inherit
 
-      &:last-child
-        margin-left: auto
+nav
+  ul
+    li
+      padding: 1em .25em
+      text-transform: lowercase
+
+      &:first-child
+        margin-right: auto
+
+      &.active
+        font-weight: 700
+
+        &::before
+          background: black
+          border-radius: 100%
+          content: ""
+          display: inline-block
+          height: .35em
+          margin-right: .35em
+          width: .35em
 
 main
   flex: 1
@@ -51,21 +67,49 @@ main
 #page-index
   h1
     background: #eee
-    max-width: 50%
+    margin: 0
+    max-width: 45%
 
   section
     align-items: flex-start
     box-sizing: border-box
     display: flex
     flex-wrap: wrap
+    justify-content: space-between
 
     > *
-      max-width: 50%
+      max-width: 45%
 
     h2
       background: #eee
       height: 350px
+      margin: 0
 
     ol
       background: #eee
-      //margin-left: auto
+      flex: 1 100%
+      margin-left: auto
+      max-width: 100%
+
+    dl
+      text-align: center
+
+      dt, dd
+        background: #eee
+
+      dt
+        padding: 1em
+
+      dd
+        margin-bottom: 1em
+        margin-left: 0
+        padding: 0 1em 1em 1em
+
+    p
+      &:first-of-type
+        margin: 0
+
+      &:last-of-type
+        max-width: 100%
+        text-align: right
+        width: 100%

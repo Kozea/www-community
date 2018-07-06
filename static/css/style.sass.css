@@ -12,8 +12,7 @@ body {
   min-height: 100%; }
   body main, body nav ul, body footer ul {
     box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     max-width: 50em; }
 
 nav ul, footer ul {
@@ -23,10 +22,23 @@ nav ul, footer ul {
     display: block; }
     nav ul li a, footer ul li a {
       color: inherit;
-      padding: 1em;
       text-decoration: inherit; }
-    nav ul li:last-child, footer ul li:last-child {
-      margin-left: auto; }
+
+nav ul li {
+  padding: 1em .25em;
+  text-transform: lowercase; }
+  nav ul li:first-child {
+    margin-right: auto; }
+  nav ul li.active {
+    font-weight: 700; }
+    nav ul li.active::before {
+      background: black;
+      border-radius: 100%;
+      content: "";
+      display: inline-block;
+      height: .35em;
+      margin-right: .35em;
+      width: .35em; }
 
 main {
   flex: 1;
@@ -39,19 +51,41 @@ main {
 
 #page-index h1 {
   background: #eee;
-  max-width: 50%; }
+  margin: 0;
+  max-width: 45%; }
 
 #page-index section {
   align-items: flex-start;
   box-sizing: border-box;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  justify-content: space-between; }
   #page-index section > * {
-    max-width: 50%; }
+    max-width: 45%; }
   #page-index section h2 {
     background: #eee;
-    height: 350px; }
+    height: 350px;
+    margin: 0; }
   #page-index section ol {
-    background: #eee; }
+    background: #eee;
+    flex: 1 100%;
+    margin-left: auto;
+    max-width: 100%; }
+  #page-index section dl {
+    text-align: center; }
+    #page-index section dl dt, #page-index section dl dd {
+      background: #eee; }
+    #page-index section dl dt {
+      padding: 1em; }
+    #page-index section dl dd {
+      margin-bottom: 1em;
+      margin-left: 0;
+      padding: 0 1em 1em 1em; }
+  #page-index section p:first-of-type {
+    margin: 0; }
+  #page-index section p:last-of-type {
+    max-width: 100%;
+    text-align: right;
+    width: 100%; }
 
 /*# sourceMappingURL=../css/style.sass.css.map */
