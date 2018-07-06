@@ -1,22 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Hind:300,700')
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700')
 
 $primary: #6E6186
+$text: #eff0f1
+$box: #141517
+=box-style
+  background: $box
+  font-family: 'Ubuntu Mono', monospace
 
 html
-  color: #1C1C1C
+  color: $text
   height: 100%
   line-height: 1.6
 
 body
+  background: url(../images/bg.png)
   display: flex
   flex-direction: column
-  font-family: Hind, sans-serif
+  font-family: 'Hind', sans-serif
   margin: 0
   min-height: 100%
 
   main, nav ul, footer ul
     box-sizing: border-box
-    margin: 0 auto
+    margin: 1em auto 0
     max-width: 50em
 
 nav, footer
@@ -32,43 +39,51 @@ nav, footer
         text-decoration: inherit
 
 nav
-  ul
-    li
-      padding: 1em .25em
-      text-transform: lowercase
+  ul li
+    padding: .5em
+    text-transform: lowercase
+    transition-duration: 350ms
 
-      &:first-child
-        margin-right: auto
+    &:first-child
+      margin-right: auto
 
-      &.active
-        font-weight: 700
+    &:last-child
+      border: 2px solid $primary
 
-        &::before
-          background: black
-          border-radius: 100%
-          content: ""
-          display: inline-block
-          height: .35em
-          margin-right: .35em
-          width: .35em
+    &.active
+      font-weight: 700
+
+      &::before
+        background: $primary
+        border-radius: 100%
+        content: ""
+        display: inline-block
+        height: .35em
+        margin-right: .35em
+        width: .35em
+
+    &:hover
+      transform: translateY(-5px)
+      -webkit-transform: translateY(-5px)
 
 main
   flex: 1
   padding: 1em
 
   a
-    color: $primary
+    color: inherit
+    font-weight: 700
+    text-decoration: none
 
   h1, h2
     font-weight: 300
     margin: 1.5em 0 0.5em
 
-
 #page-index
   h1
-    background: #eee
-    margin: 0
-    max-width: 45%
+    display: none
+    //margin: 0
+    //max-width: 45%
 
   section
     align-items: flex-start
@@ -81,24 +96,42 @@ main
       max-width: 45%
 
     h2
-      background: #eee
-      height: 350px
+      align-content: center
+      background: url(../images/keyboard.png) center no-repeat
+      box-sizing: border-box
+      display: flex
+      flex-wrap: wrap
+      font-size: 2em
+      font-weight: 700
+      height: 550px
       margin: 0
+      padding: 1em
+
+      &::before
+        content: 'kozea community'
+        display: block
+        font-size: .7em
 
     ol
-      background: #eee
+      +box-style
       flex: 1 100%
       margin-left: auto
       max-width: 100%
+      padding: 1em 1em 1em 40px
 
     dl
       text-align: center
 
       dt, dd
-        background: #eee
+        +box-style
 
       dt
-        padding: 1em
+        padding-top: 1em
+
+        a
+          color: inherit
+          font-weight: 700
+          text-decoration: none
 
       dd
         margin-bottom: 1em
@@ -107,9 +140,25 @@ main
 
     p
       &:first-of-type
+        align-self: center
         margin: 0
 
       &:last-of-type
+        font-weight: 700
         max-width: 100%
         text-align: right
+        transition-duration: 350ms
         width: 100%
+
+        &:hover
+          transform: translateX(5px)
+          -webkit-transform: translateX(5px)
+
+        a
+          color: inherit
+          text-decoration: none
+
+          &::after
+            content: "[ > ]"
+            color: $primary
+            margin-left: .25em
