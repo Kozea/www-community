@@ -1,9 +1,117 @@
 @import url("https://fonts.googleapis.com/css?family=Hind:300,700");
 @import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700");
+@import url("https://fonts.googleapis.com/css?family=Hind:300,700");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700");
+@import url("https://fonts.googleapis.com/css?family=Hind:300,700");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700");
+@import url("https://fonts.googleapis.com/css?family=Hind:300,700");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700");
+#page-index h1 {
+  display: none; }
+
+#page-index section {
+  align-items: flex-start;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  #page-index section > * {
+    max-width: 45%; }
+  #page-index section h2 {
+    align-content: center;
+    background: url(../images/keyboard.png) center no-repeat;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 2em;
+    font-weight: 700;
+    height: 550px;
+    margin: 0;
+    padding: 1em; }
+    #page-index section h2::before {
+      content: 'kozea community';
+      display: block;
+      font-size: .7em; }
+  #page-index section ol {
+    background: #141517;
+    font-family: 'Ubuntu Mono', monospace;
+    flex: 1 100%;
+    margin-left: auto;
+    max-width: 100%;
+    padding: 1em 1em 1em 40px; }
+  #page-index section dl {
+    text-align: center; }
+    #page-index section dl dt, #page-index section dl dd {
+      background: #141517;
+      font-family: 'Ubuntu Mono', monospace; }
+    #page-index section dl dt {
+      padding-top: 1em; }
+      #page-index section dl dt a {
+        color: #e3a309;
+        font-weight: 700;
+        text-decoration: none; }
+    #page-index section dl dd {
+      margin-bottom: 1em;
+      margin-left: 0;
+      padding: 0 1em 1em 1em; }
+  #page-index section p:first-of-type {
+    align-self: center;
+    margin: 0; }
+  #page-index section p:last-of-type {
+    font-weight: 700;
+    max-width: 100%;
+    text-align: right;
+    transition-duration: 350ms;
+    width: 100%; }
+    #page-index section p:last-of-type:hover {
+      transform: translateX(5px);
+      -webkit-transform: translateX(5px); }
+    #page-index section p:last-of-type a {
+      color: inherit;
+      transform: none; }
+      #page-index section p:last-of-type a::after {
+        content: "[ > ]";
+        color: #6E6186;
+        margin-left: .25em; }
+
+#page-get_involved h1 {
+  display: none; }
+
+#page-get_involved section {
+  display: flex; }
+  #page-get_involved section h2 {
+    color: #6E6186;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    font-weight: 700;
+    text-transform: lowercase;
+    width: 35%; }
+  #page-get_involved section p {
+    width: 65%; }
+
+#page-about h1 {
+  display: none; }
+
+#page-about section {
+  display: flex;
+  flex-wrap: wrap; }
+  #page-about section h2 {
+    color: #6E6186;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    font-weight: 700;
+    text-transform: lowercase;
+    width: 35%; }
+  #page-about section p {
+    margin-left: auto;
+    width: 65%; }
+  #page-about section ul {
+    padding-left: 0; }
+
 html {
   color: #eff0f1;
   height: 100%;
-  line-height: 1.6; }
+  line-height: 1.8; }
 
 body {
   background: url(../images/bg.png);
@@ -53,78 +161,43 @@ main {
   padding: 1em; }
   main a {
     color: inherit;
+    display: inline-block;
     font-weight: 700;
-    text-decoration: none; }
-  main h1, main h2 {
+    text-decoration: none;
+    transition-duration: 350ms; }
+    main a:hover {
+      color: #6E6186;
+      transform: translateY(-5px);
+      -webkit-transform: translateY(-5px); }
+  main h2 {
     font-weight: 300;
     margin: 1.5em 0 0.5em; }
 
-#page-index h1 {
-  display: none; }
-
-#page-index section {
-  align-items: flex-start;
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; }
-  #page-index section > * {
-    max-width: 45%; }
-  #page-index section h2 {
-    align-content: center;
-    background: url(../images/keyboard.png) center no-repeat;
-    box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 2em;
-    font-weight: 700;
-    height: 550px;
-    margin: 0;
-    padding: 1em; }
-    #page-index section h2::before {
-      content: 'kozea community';
+footer ul {
+  flex-direction: column; }
+  footer ul li {
+    margin: .5em 0;
+    transition-duration: 350ms; }
+    footer ul li.github a {
+      background: url("../images/github.svg") no-repeat center;
       display: block;
-      font-size: .7em; }
-  #page-index section ol {
-    background: #141517;
-    font-family: 'Ubuntu Mono', monospace;
-    flex: 1 100%;
-    margin-left: auto;
-    max-width: 100%;
-    padding: 1em 1em 1em 40px; }
-  #page-index section dl {
-    text-align: center; }
-    #page-index section dl dt, #page-index section dl dd {
-      background: #141517;
-      font-family: 'Ubuntu Mono', monospace; }
-    #page-index section dl dt {
-      padding-top: 1em; }
-      #page-index section dl dt a {
-        color: inherit;
-        font-weight: 700;
-        text-decoration: none; }
-    #page-index section dl dd {
-      margin-bottom: 1em;
-      margin-left: 0;
-      padding: 0 1em 1em 1em; }
-  #page-index section p:first-of-type {
-    align-self: center;
-    margin: 0; }
-  #page-index section p:last-of-type {
-    font-weight: 700;
-    max-width: 100%;
-    text-align: right;
-    transition-duration: 350ms;
-    width: 100%; }
-    #page-index section p:last-of-type:hover {
-      transform: translateX(5px);
-      -webkit-transform: translateX(5px); }
-    #page-index section p:last-of-type a {
-      color: inherit;
-      text-decoration: none; }
-      #page-index section p:last-of-type a::after {
-        content: "[ > ]";
-        color: #6E6186;
-        margin-left: .25em; }
+      font-size: 0;
+      height: 30px;
+      width: 30px; }
+    footer ul li.about a {
+      background: url("../images/about.svg") no-repeat center;
+      display: block;
+      font-size: 0;
+      height: 30px;
+      width: 30px; }
+    footer ul li.kozea a {
+      background: url("../images/kozea.svg") no-repeat center;
+      display: block;
+      font-size: 0;
+      height: 30px;
+      width: 30px; }
+    footer ul li:hover {
+      transform: translateY(-5px);
+      -webkit-transform: translateY(-5px); }
 
 /*# sourceMappingURL=../css/style.sass.css.map */

@@ -1,17 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Hind:300,700')
-@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700')
-
-$primary: #6E6186
-$text: #eff0f1
-$box: #141517
-=box-style
-  background: $box
-  font-family: 'Ubuntu Mono', monospace
+@import variables
+@import page-index
+@import page-get_involved
+@import page-about
 
 html
   color: $text
   height: 100%
-  line-height: 1.6
+  line-height: 1.8
 
 body
   background: url(../images/bg.png)
@@ -72,93 +67,36 @@ main
 
   a
     color: inherit
+    display: inline-block
     font-weight: 700
     text-decoration: none
+    transition-duration: 350ms
 
-  h1, h2
+    &:hover
+      color: $primary
+      transform: translateY(-5px)
+      -webkit-transform: translateY(-5px)
+
+  h2
     font-weight: 300
     margin: 1.5em 0 0.5em
 
-#page-index
-  h1
-    display: none
-    //margin: 0
-    //max-width: 45%
+footer
+  ul
+    flex-direction: column
 
-  section
-    align-items: flex-start
-    box-sizing: border-box
-    display: flex
-    flex-wrap: wrap
-    justify-content: space-between
+    li
+      margin: .5em 0
+      transition-duration: 350ms
 
-    > *
-      max-width: 45%
+      @each $name in github, about, kozea
+        &.#{$name} a
+          background: url("../images/#{$name}.svg") no-repeat center
+          display: block
+          font-size: 0
+          height: 30px
+          width: 30px
 
-    h2
-      align-content: center
-      background: url(../images/keyboard.png) center no-repeat
-      box-sizing: border-box
-      display: flex
-      flex-wrap: wrap
-      font-size: 2em
-      font-weight: 700
-      height: 550px
-      margin: 0
-      padding: 1em
-
-      &::before
-        content: 'kozea community'
-        display: block
-        font-size: .7em
-
-    ol
-      +box-style
-      flex: 1 100%
-      margin-left: auto
-      max-width: 100%
-      padding: 1em 1em 1em 40px
-
-    dl
-      text-align: center
-
-      dt, dd
-        +box-style
-
-      dt
-        padding-top: 1em
-
-        a
-          color: inherit
-          font-weight: 700
-          text-decoration: none
-
-      dd
-        margin-bottom: 1em
-        margin-left: 0
-        padding: 0 1em 1em 1em
-
-    p
-      &:first-of-type
-        align-self: center
-        margin: 0
-
-      &:last-of-type
-        font-weight: 700
-        max-width: 100%
-        text-align: right
-        transition-duration: 350ms
-        width: 100%
-
-        &:hover
-          transform: translateX(5px)
-          -webkit-transform: translateX(5px)
-
-        a
-          color: inherit
-          text-decoration: none
-
-          &::after
-            content: "[ > ]"
-            color: $primary
-            margin-left: .25em
+      &:hover
+        transform: translateY(-5px)
+        -webkit-transform: translateY(-5px)
