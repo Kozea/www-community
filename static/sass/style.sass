@@ -1,28 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400')
+@import variables
+@import page-index
+@import page-get_involved
+@import page-about
 
 html
-  background: #F9F9F9
-  color: #1C1C1C
+  color: $text
   height: 100%
-  line-height: 1.6
+  line-height: 1.8
 
 body
+  background: url(../images/bg.png)
   display: flex
   flex-direction: column
-  font-family: Open Sans
+  font-family: 'Hind', sans-serif
   margin: 0
   min-height: 100%
 
   main, nav ul, footer ul
     box-sizing: border-box
-    margin-left: auto
-    margin-right: auto
+    margin: 1em auto 0
     max-width: 50em
 
 nav, footer
-  background: #6E6186
-  color: white
-
   ul
     display: flex
     padding: 0
@@ -32,26 +31,74 @@ nav, footer
 
       a
         color: inherit
-        padding: 1em
         text-decoration: inherit
 
-      &.active a, &:hover a
-        background: rgba(0, 0, 0, 0.1)
+nav
+  ul li
+    padding: .5em
+    text-transform: lowercase
+    transition-duration: 350ms
 
-      &:last-child
-        margin-left: auto
+    &:first-child
+      margin-right: auto
 
-nav li:last-child a
-  background: rgba(255, 255, 255, 0.1)
+    &:last-child
+      border: 2px solid $primary
 
+    &.active
+      font-weight: 700
+
+      &::before
+        background: $primary
+        border-radius: 100%
+        content: ""
+        display: inline-block
+        height: .35em
+        margin-right: .35em
+        width: .35em
+
+    &:hover
+      transform: translateY(-5px)
+      -webkit-transform: translateY(-5px)
 
 main
   flex: 1
   padding: 1em
 
   a
-    color: #6E6186
+    color: inherit
+    display: inline-block
+    font-weight: 700
+    text-decoration: none
+    transition-duration: 350ms
 
-  h1, h2
+    &:hover
+      color: $primary
+      transform: translateY(-5px)
+      -webkit-transform: translateY(-5px)
+
+  h2
     font-weight: 300
     margin: 1.5em 0 0.5em
+
+footer
+  ul
+    flex-direction: column
+
+    li
+      margin: .5em 0
+      transition-duration: 350ms
+
+      @each $name in github, about, kozea
+        &.#{$name} a
+          background: url("../images/#{$name}.svg") no-repeat center
+          display: block
+          font-size: 0
+          height: 30px
+          width: 30px
+
+      &:hover
+        transform: translateY(-5px)
+        -webkit-transform: translateY(-5px)
+
+@import responsive

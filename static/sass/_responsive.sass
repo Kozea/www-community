@@ -1,0 +1,51 @@
+@media screen and (max-width: 600px)
+  body
+    main
+      max-width: 100%
+
+    nav ul
+      flex-wrap: wrap
+      justify-content: center
+
+      li:first-child
+        flex: 1 100%
+        text-align: center
+
+    footer
+      ul
+        flex-direction: row
+        justify-content: center
+        margin: 1em 0
+
+        li
+          margin: 0 1em
+
+  #page-index
+    section
+      > *
+        max-width: 100%
+        width: 100%
+
+      h2
+        height: auto
+
+      ol
+        position: initial
+
+      p:last-of-type
+        text-align: center
+
+  #page-get_involved, #page-about
+    section
+      flex-wrap: wrap
+
+      h2
+        flex: 1 100%
+        margin: 1em 0 0 0
+
+      p
+        margin-top: 0
+        width: 100%
+
+      ul
+        padding-left: .75em

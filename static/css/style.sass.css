@@ -1,49 +1,245 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400");
+@import url("https://fonts.googleapis.com/css?family=Hind:300,700");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700");
+#page-index h1 {
+  display: none; }
+
+#page-index section {
+  align-items: flex-start;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative; }
+  #page-index section > * {
+    max-width: 45%; }
+  #page-index section h2 {
+    align-content: center;
+    background: url(../images/keyboard.png) center no-repeat;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 2em;
+    font-weight: 700;
+    height: 550px;
+    margin: 0;
+    padding: 1em; }
+    #page-index section h2::before {
+      content: 'kozea community';
+      display: block;
+      font-size: .7em; }
+  #page-index section ol {
+    background: #141517;
+    font-family: 'Ubuntu Mono', monospace;
+    flex: 1 100%;
+    left: 55%;
+    margin-left: auto;
+    max-width: 100%;
+    padding: 1em 1em 1em 40px;
+    position: absolute;
+    right: 0;
+    top: 350px; }
+  #page-index section dl {
+    text-align: center; }
+    #page-index section dl dt, #page-index section dl dd {
+      background: #141517;
+      font-family: 'Ubuntu Mono', monospace; }
+    #page-index section dl dt {
+      padding-top: 1em; }
+      #page-index section dl dt a {
+        color: #e3a309;
+        font-weight: 700;
+        text-decoration: none; }
+    #page-index section dl dd {
+      margin-bottom: 1em;
+      margin-left: 0;
+      padding: 0 1em 1em 1em; }
+  #page-index section p:first-of-type {
+    align-self: center; }
+  #page-index section p:last-of-type {
+    font-weight: 700;
+    max-width: 100%;
+    text-align: right;
+    transition-duration: 350ms;
+    width: 100%; }
+    #page-index section p:last-of-type:hover {
+      transform: translateX(5px);
+      -webkit-transform: translateX(5px); }
+    #page-index section p:last-of-type a {
+      color: inherit;
+      transform: none; }
+      #page-index section p:last-of-type a::after {
+        content: "[ > ]";
+        color: #6E6186;
+        margin-left: .25em; }
+
+#page-get_involved h1 {
+  display: none; }
+
+#page-get_involved section {
+  display: flex;
+  margin: 1.5em 0; }
+  #page-get_involved section h2 {
+    color: #6E6186;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    font-weight: 700;
+    margin: 0;
+    text-transform: lowercase;
+    width: 35%; }
+  #page-get_involved section p {
+    width: 65%; }
+    #page-get_involved section p:first-of-type {
+      margin-top: 0; }
+
+#page-about h1 {
+  display: none; }
+
+#page-about section {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1.5em 0; }
+  #page-about section h2 {
+    color: #6E6186;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    font-weight: 700;
+    margin: 0;
+    text-transform: lowercase;
+    width: 35%; }
+  #page-about section p {
+    margin-left: auto;
+    width: 65%; }
+    #page-about section p:first-of-type {
+      margin-top: 0; }
+  #page-about section ul {
+    margin-top: 0;
+    padding-left: 0; }
+
 html {
-  background: #F9F9F9;
-  color: #1C1C1C;
+  color: #eff0f1;
   height: 100%;
-  line-height: 1.6; }
+  line-height: 1.8; }
 
 body {
+  background: url(../images/bg.png);
   display: flex;
   flex-direction: column;
-  font-family: Open Sans;
+  font-family: 'Hind', sans-serif;
   margin: 0;
   min-height: 100%; }
   body main, body nav ul, body footer ul {
     box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 1em auto 0;
     max-width: 50em; }
 
-nav, footer {
-  background: #6E6186;
-  color: white; }
-  nav ul, footer ul {
-    display: flex;
-    padding: 0; }
-    nav ul li, footer ul li {
-      display: block; }
-      nav ul li a, footer ul li a {
-        color: inherit;
-        padding: 1em;
-        text-decoration: inherit; }
-      nav ul li.active a, nav ul li:hover a, footer ul li.active a, footer ul li:hover a {
-        background: rgba(0, 0, 0, 0.1); }
-      nav ul li:last-child, footer ul li:last-child {
-        margin-left: auto; }
+nav ul, footer ul {
+  display: flex;
+  padding: 0; }
+  nav ul li, footer ul li {
+    display: block; }
+    nav ul li a, footer ul li a {
+      color: inherit;
+      text-decoration: inherit; }
 
-nav li:last-child a {
-  background: rgba(255, 255, 255, 0.1); }
+nav ul li {
+  padding: .5em;
+  text-transform: lowercase;
+  transition-duration: 350ms; }
+  nav ul li:first-child {
+    margin-right: auto; }
+  nav ul li:last-child {
+    border: 2px solid #6E6186; }
+  nav ul li.active {
+    font-weight: 700; }
+    nav ul li.active::before {
+      background: #6E6186;
+      border-radius: 100%;
+      content: "";
+      display: inline-block;
+      height: .35em;
+      margin-right: .35em;
+      width: .35em; }
+  nav ul li:hover {
+    transform: translateY(-5px);
+    -webkit-transform: translateY(-5px); }
 
 main {
   flex: 1;
   padding: 1em; }
   main a {
-    color: #6E6186; }
-  main h1, main h2 {
-    margin: 1.5em 0 0.5em;
-    font-weight: 300; }
+    color: inherit;
+    display: inline-block;
+    font-weight: 700;
+    text-decoration: none;
+    transition-duration: 350ms; }
+    main a:hover {
+      color: #6E6186;
+      transform: translateY(-5px);
+      -webkit-transform: translateY(-5px); }
+  main h2 {
+    font-weight: 300;
+    margin: 1.5em 0 0.5em; }
+
+footer ul {
+  flex-direction: column; }
+  footer ul li {
+    margin: .5em 0;
+    transition-duration: 350ms; }
+    footer ul li.github a {
+      background: url("../images/github.svg") no-repeat center;
+      display: block;
+      font-size: 0;
+      height: 30px;
+      width: 30px; }
+    footer ul li.about a {
+      background: url("../images/about.svg") no-repeat center;
+      display: block;
+      font-size: 0;
+      height: 30px;
+      width: 30px; }
+    footer ul li.kozea a {
+      background: url("../images/kozea.svg") no-repeat center;
+      display: block;
+      font-size: 0;
+      height: 30px;
+      width: 30px; }
+    footer ul li:hover {
+      transform: translateY(-5px);
+      -webkit-transform: translateY(-5px); }
+
+@media screen and (max-width: 600px) {
+  body main {
+    max-width: 100%; }
+  body nav ul {
+    flex-wrap: wrap;
+    justify-content: center; }
+    body nav ul li:first-child {
+      flex: 1 100%;
+      text-align: center; }
+  body footer ul {
+    flex-direction: row;
+    justify-content: center;
+    margin: 1em 0; }
+    body footer ul li {
+      margin: 0 1em; }
+  #page-index section > * {
+    max-width: 100%;
+    width: 100%; }
+  #page-index section h2 {
+    height: auto; }
+  #page-index section ol {
+    position: initial; }
+  #page-index section p:last-of-type {
+    text-align: center; }
+  #page-get_involved section, #page-about section {
+    flex-wrap: wrap; }
+    #page-get_involved section h2, #page-about section h2 {
+      flex: 1 100%;
+      margin: 1em 0 0 0; }
+    #page-get_involved section p, #page-about section p {
+      margin-top: 0;
+      width: 100%; }
+    #page-get_involved section ul, #page-about section ul {
+      padding-left: .75em; } }
 
 /*# sourceMappingURL=../css/style.sass.css.map */
