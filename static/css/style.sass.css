@@ -76,34 +76,43 @@
   display: none; }
 
 #page-get_involved section {
-  display: flex; }
+  display: flex;
+  margin: 1.5em 0; }
   #page-get_involved section h2 {
     color: #6E6186;
     font-family: 'Ubuntu Mono', monospace;
     font-size: 1em;
     font-weight: 700;
+    margin: 0;
     text-transform: lowercase;
     width: 35%; }
   #page-get_involved section p {
     width: 65%; }
+    #page-get_involved section p:first-of-type {
+      margin-top: 0; }
 
 #page-about h1 {
   display: none; }
 
 #page-about section {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin: 1.5em 0; }
   #page-about section h2 {
     color: #6E6186;
     font-family: 'Ubuntu Mono', monospace;
     font-size: 1em;
     font-weight: 700;
+    margin: 0;
     text-transform: lowercase;
     width: 35%; }
   #page-about section p {
     margin-left: auto;
     width: 65%; }
+    #page-about section p:first-of-type {
+      margin-top: 0; }
   #page-about section ul {
+    margin-top: 0;
     padding-left: 0; }
 
 html {
