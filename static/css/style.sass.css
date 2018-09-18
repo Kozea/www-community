@@ -191,6 +191,12 @@ footer ul {
       font-size: 0;
       height: 30px;
       width: 30px; }
+    footer ul li.twitter a {
+      background: url("../images/twitter.svg") no-repeat center;
+      display: block;
+      font-size: 0;
+      height: 30px;
+      width: 30px; }
     footer ul li.about a {
       background: url("../images/about.svg") no-repeat center;
       display: block;
