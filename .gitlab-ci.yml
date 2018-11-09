@@ -11,7 +11,7 @@ image: paradoxxxzero/python-node-yarn-postgresql:latest
 .artifacts: &artifacts
   artifacts:
     paths:
-      - .env/
+      - .venv/
 
 install:
   stage: install
